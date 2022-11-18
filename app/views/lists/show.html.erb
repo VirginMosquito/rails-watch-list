@@ -1,5 +1,8 @@
+<div class="container">
+<% p @list.photo.attached? %>
 <h2><%= @list.name %></h2>
-
+<%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
+</div>
 <ul>
   <% @movies.each do |movie| %>
     <li><%= movie.title %></li>
@@ -7,4 +10,4 @@
 </ul>
 
 <p><%= link_to "add a new film to the list", new_list_bookmark_path(@list) %></p>
-<%# <p><%= link_to "delete a film from the list", list_bookmark_path(@list) %></p> %>
+<%# <p><%= link_to "delete a film from the list", bookmark_path(@bookmark)</p> %> %>
